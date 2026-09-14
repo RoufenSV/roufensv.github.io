@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete List of All Physical Nintendo Switch 2 Games</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        #search {
+            width: 500px;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            min-width: 1700px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            height: 42px;
+        }
+
+        th {
+            background: #1f2937;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        th:hover {
+            background: #374151;
+        }
+
+        th .arrow {
+            margin-left: 6px;
+            color: #9ca3af;
+        }
+
+        th.sorted-asc .arrow::after {
+            content: "▲";
+            color: white;
+        }
+
+        th.sorted-desc .arrow::after {
+            content: "▼";
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        tbody tr:hover {
+            background: #eef2ff;
+        }
+
+        .number-cell {
+            text-align: right;
+        }
+
+        .price-cell {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .date-cell {
+            white-space: nowrap;
+        }
+
+        .info {
+            margin-top: 10px;
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Complete Nintendo Switch 2 Physical Games List</h1>
+
+    <div class="info">
+        Click any column heading to sort. Click again to reverse the order.
+    </div>
+
+    <div class="info">
+		The Print Run numbers are estimated guesses for almost all titles.
+    </div>
+	
+    <div class="info">
+		Last Updated on 14/09/2026.
+    </div>
+	
+    <div class="info">
+		
+    </div>
+	
+    <div class="toolbar">
+        <input
+            type="text"
+            id="search"
+            placeholder="Find Game..."
+            oninput="filterTable()"
+        >
+
+        <button onclick="clearSearch()">Clear Search</button>
+    </div>
+
+
+	
+    <div class="table-container">
+
+        <table id="dataTable">
+
+            <thead>
+                <tr>
+
+                    <!-- 1: NUMBER -->
+                    <th data-type="number" onclick="sortTable(0)">
+                        No.
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 2: DATE -->
+                    <th data-type="date" onclick="sortTable(1)">
+                        First Release
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 3: TEXT -->
+                    <th data-type="text" onclick="sortTable(2)">
+                        ENG
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 4: TEXT -->
+                    <th data-type="text" onclick="sortTable(3)">
+                        Format No.
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 5: NUMBER -->
+                    <th data-type="number" onclick="sortTable(4)">
+                        No.
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 6: DATE -->
+                    <th data-type="date" onclick="sortTable(5)">
+                        Asia+
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 7: NUMBER -->
+                    <th data-type="number" onclick="sortTable(6)">
+                        No.
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 8: DATE -->
+                    <th data-type="date" onclick="sortTable(7)">
+                        Americas
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 9: NUMBER -->
+                    <th data-type="number" onclick="sortTable(8)">
+                        No.
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 10: DATE -->
+                    <th data-type="date" onclick="sortTable(9)">
+                        Europe
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 11: TEXT -->
+                    <th data-type="text" onclick="sortTable(10)">
+                        Game Title
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 12: TEXT -->
+                    <th data-type="text" onclick="sortTable(11)">
+                        Publisher
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 13: TEXT -->
+                    <th data-type="text" onclick="sortTable(12)">
+                        Developer
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 14: PRICE -->
+                    <th data-type="price" onclick="sortTable(13)">
+                        SRP
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 15: TEXT -->
+                    <th data-type="text" onclick="sortTable(14)">
+                        Format
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 16: NUMBER -->
+                    <th data-type="number" onclick="sortTable(15)">
+                        PrintRun
+                        <span class="arrow"></span>
+                    </th>
+
+                    <!-- 17: TEXT -->
+                    <th data-type="text" onclick="sortTable(16)">
+                        Notes
+                        <span class="arrow"></span>
+                    </th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 1</td>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Mario Kart World</td>
+                    <td>Nintendo</td>
+                    <td>Nintendo</td>
+                    <td class="price-cell">€89.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">10,000,000</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Code 1</td>
+                    <td class="number-cell"></td>
+                    <td class="date-cell"></td>
+                    <td class="number-cell"></td>
+                    <td class="date-cell"></td>
+                    <td class="number-cell">1</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Mario Kart World</td>
+                    <td>Nintendo</td>
+                    <td>Nintendo</td>
+                    <td class="price-cell">€0.00</td>
+                    <td>Download Code</td>
+                    <td class="number-cell">1,000,000</td>
+                    <td></td>
+                </tr>
+				
+                <tr>
+                    <td class="number-cell">2</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 2</td>
+                    <td class="number-cell">2</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">2</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">2</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>The Legend of Zelda: Breath of the Wild</td>
+                    <td>Nintendo</td>
+                    <td>Nintendo</td>
+                    <td class="price-cell">€79.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">1,000,000</td>
+                    <td></td>
+                </tr>
+                </tr>
+
+                <tr>
+                    <td class="number-cell">3</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 3</td>
+                    <td class="number-cell">3</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">3</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">3</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>The Legend of Zelda: Tears of the Kingdoom</td>
+                    <td>Nintendo</td>
+                    <td>Nintendo</td>
+                    <td class="price-cell">€89.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">1,000,000</td>
+                    <td></td>
+                </tr>
+				
+				<tr>
+                    <td class="number-cell">4</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 3</td>
+                    <td class="number-cell">4</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">4</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">4</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Cyberpunk 2077: Ultimate Edition</td>
+                    <td>CD Project Red</td>
+                    <td>CD Project Red</td>
+                    <td class="price-cell">€69.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">500,000</td>
+                    <td></td>
+                </tr>
+				
+				<tr>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 3</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Rune Factory: Guardians of Azuma</td>
+                    <td>Marvelous</td>
+                    <td>Marvelous</td>
+                    <td class="price-cell">€79.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">100,000</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 3</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Sid Meier's Civilization VII</td>
+                    <td>2k</td>
+                    <td>2k</td>
+                    <td class="price-cell">€69.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">50,000</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Yes</td>
+                    <td>Card 3</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td class="number-cell">5</td>
+                    <td class="date-cell">05/06/2025</td>
+                    <td>Split Fiction</td>
+                    <td>EA</td>
+                    <td>EA</td>
+                    <td class="price-cell">€49.99</td>
+                    <td>Game Card</td>
+                    <td class="number-cell">50,000</td>
+                    <td></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="info">
+        This website has no affiliation with any developer or publisher mentioned in it.
+    </div>
+
+    <div class="info">
+		Its purpose is to preserve the information of the physical game releases.
+    </div>
+
+    <script>
+
+        // Stores the current sort direction for each column
+        let sortDirections = {};
+
+
+        // Convert DD/MM/YYYY into a sortable timestamp
+        function parseDate(dateString) {
+
+            dateString = dateString.trim();
+
+            if (!dateString) {
+                return null;
+            }
+
+            const parts = dateString.split("/");
+
+            if (parts.length === 3) {
+
+                const day = parseInt(parts[0]);
+                const month = parseInt(parts[1]) - 1;
+                const year = parseInt(parts[2]);
+
+                if (
+                    !isNaN(day) &&
+                    !isNaN(month) &&
+                    !isNaN(year)
+                ) {
+                    return new Date(
+                        year,
+                        month,
+                        day
+                    ).getTime();
+                }
+            }
+
+            return null;
+        }
+
+
+        // Convert a price such as "€1,250.50" into a number
+        function parsePrice(priceString) {
+
+            priceString = priceString
+                .replace("€", "")
+                .replace(/,/g, "")
+                .trim();
+
+            const value = parseFloat(priceString);
+
+            return isNaN(value) ? null : value;
+        }
+
+
+        // Sort table
+        function sortTable(columnIndex) {
+
+            const table = document.getElementById("dataTable");
+            const tbody = table.querySelector("tbody");
+
+            const rows = Array.from(
+                tbody.querySelectorAll("tr")
+            );
+
+            const headers = table.querySelectorAll("th");
+
+            const type =
+                headers[columnIndex].dataset.type;
+
+
+            // Toggle direction
+            if (!sortDirections[columnIndex]) {
+
+                sortDirections[columnIndex] = "asc";
+
+            } else {
+
+                sortDirections[columnIndex] =
+                    sortDirections[columnIndex] === "asc"
+                        ? "desc"
+                        : "asc";
+            }
+
+
+            const direction =
+                sortDirections[columnIndex];
+
+
+            rows.sort(function(rowA, rowB) {
+
+                let valueA =
+                    rowA.cells[columnIndex]
+                        .innerText
+                        .trim();
+
+                let valueB =
+                    rowB.cells[columnIndex]
+                        .innerText
+                        .trim();
+
+
+                let comparison = 0;
+
+
+                // NUMBER
+                if (type === "number") {
+
+                    const numberA =
+                        parseFloat(
+                            valueA.replace(/,/g, "")
+                        );
+
+                    const numberB =
+                        parseFloat(
+                            valueB.replace(/,/g, "")
+                        );
+
+
+                    if (
+                        isNaN(numberA) &&
+                        isNaN(numberB)
+                    ) {
+
+                        comparison = 0;
+
+                    } else if (isNaN(numberA)) {
+
+                        comparison = 1;
+
+                    } else if (isNaN(numberB)) {
+
+                        comparison = -1;
+
+                    } else {
+
+                        comparison =
+                            numberA - numberB;
+                    }
+                }
+
+
+                // DATE
+                else if (type === "date") {
+
+                    const dateA =
+                        parseDate(valueA);
+
+                    const dateB =
+                        parseDate(valueB);
+
+
+                    if (
+                        dateA === null &&
+                        dateB === null
+                    ) {
+
+                        comparison = 0;
+
+                    } else if (dateA === null) {
+
+                        comparison = 1;
+
+                    } else if (dateB === null) {
+
+                        comparison = -1;
+
+                    } else {
+
+                        comparison =
+                            dateA - dateB;
+                    }
+                }
+
+
+                // PRICE
+                else if (type === "price") {
+
+                    const priceA =
+                        parsePrice(valueA);
+
+                    const priceB =
+                        parsePrice(valueB);
+
+
+                    if (
+                        priceA === null &&
+                        priceB === null
+                    ) {
+
+                        comparison = 0;
+
+                    } else if (priceA === null) {
+
+                        comparison = 1;
+
+                    } else if (priceB === null) {
+
+                        comparison = -1;
+
+                    } else {
+
+                        comparison =
+                            priceA - priceB;
+                    }
+                }
+
+
+                // TEXT
+                else {
+
+                    comparison =
+                        valueA.localeCompare(
+                            valueB,
+                            undefined,
+                            {
+                                numeric: true,
+                                sensitivity: "base"
+                            }
+                        );
+                }
+
+
+                return direction === "asc"
+                    ? comparison
+                    : -comparison;
+
+            });
+
+
+            // Put sorted rows back into table
+            rows.forEach(function(row) {
+
+                tbody.appendChild(row);
+
+            });
+
+
+            // Remove arrows from all headers
+            headers.forEach(function(header) {
+
+                header.classList.remove(
+                    "sorted-asc",
+                    "sorted-desc"
+                );
+
+            });
+
+
+            // Add arrow to active header
+            headers[columnIndex].classList.add(
+                direction === "asc"
+                    ? "sorted-asc"
+                    : "sorted-desc"
+            );
+        }
+
+
+        // Search/filter
+        function filterTable() {
+
+            const search =
+                document
+                    .getElementById("search")
+                    .value
+                    .toLowerCase();
+
+
+            const rows =
+                document.querySelectorAll(
+                    "#dataTable tbody tr"
+                );
+
+
+            rows.forEach(function(row) {
+
+                const text =
+                    row.innerText.toLowerCase();
+
+
+                if (text.includes(search)) {
+
+                    row.style.display = "";
+
+                } else {
+
+                    row.style.display = "none";
+                }
+            });
+        }
+
+
+        // Clear search box
+        function clearSearch() {
+
+            document.getElementById("search").value = "";
+
+            filterTable();
+        }
+
+    </script>
+
+</body>
+</html>
